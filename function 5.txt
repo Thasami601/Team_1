@@ -1,0 +1,26 @@
+def number_of_tweets_per_day(df):
+
+    dates = []
+
+    for index, row in twitter_df.iterrows():
+        dates.append(row['Date'].split(' ')[0])
+
+    dates_count = []
+    count = []
+    for i in dates:
+        if i in dates_count:
+            continue
+        else:
+            count.append(dates.count(i))
+            dates_count.append(i)
+
+    #for index in range(len(dates_count)):
+        #print(str(index)+"\t"+str(dates_count[index])+"\t"+str(count[index])) 
+    
+    new_df = pd.DataFrame()
+    new_df['Date'] = dates_count[::-1]
+    new_df['Tweets'] = count[::-1]
+    
+    return new_df
+
+    
