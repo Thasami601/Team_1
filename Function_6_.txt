@@ -1,6 +1,0 @@
-### START FUNCTION
-def word_splitter(df):
-    # your code here
-    df['Splits Tweets']= df.Tweets.str.lower().str.split()
-    return df
-### END FUNCTION
